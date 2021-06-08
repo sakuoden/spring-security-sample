@@ -10,7 +10,7 @@ public class MemberNumber {
         this.value = memberNumber;
     }
 
-    public boolean equals(MemberNumber other) {
+    public boolean isSameAs(MemberNumber other) {
         return this.value.equals(other.value);
     }
 
