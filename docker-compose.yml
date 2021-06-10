@@ -1,0 +1,15 @@
+version: "3.1"
+services:
+  database:
+    image: library/postgres:13.1
+    container_name: spring-security-sample-postgres
+    ports:
+      - "25432:5432"
+    environment:
+      POSTGRES_DB: spring_security_sample
+      POSTGRES_USER: spring_security_sample
+      POSTGRES_PASSWORD: password
+      POSTGRES_INITDB_ARGS: "--encoding=UTF-8 --auth-local=md5 --auth-host=md5"
+      TZ: "Asia/Tokyo"
+    volumes:
+    - ./initdb:/docker-entrypoint-initdb.d
